@@ -14,8 +14,9 @@ def get_weatherdata():
     'appid': "2d395903ac3a9d88a3c25c5d2326d70a",
     'units': "metric"}
     response = requests.get(url, params= param)
+    city = data['name']
     data = response.json()
-    return f"data :{data}"
+    return f"data :{data}, city :{city}"
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port= 5002)
